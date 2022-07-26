@@ -6,6 +6,8 @@ import boto3
 
 class AWSSecretManager:
     """ Class for retrieve secrets from AWS Secret Manager """
+    def __init__(self, region='us-east-1'):
+        self.region = region
 
     def __init__(self, region):
         self.client = boto3.client("secretsmanager", region_name=region)
